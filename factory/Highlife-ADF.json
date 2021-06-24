@@ -1,0 +1,9 @@
+{
+	"name": "Highlife-ADF",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "788bfa7e-b9ba-4b0c-98ad-772c42f7d5c1",
+		"tenantId": "e4ba15d0-7fe2-4bd4-a3ef-a97a4378231e"
+	}
+}
