@@ -46,7 +46,7 @@
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['Id']"
+									"path": "$['Idtext']"
 								}
 							},
 							{
@@ -2419,7 +2419,10 @@
 				"outputs": [
 					{
 						"referenceName": "ProfiseeRESTAPI",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"entityId": "Account"
+						}
 					}
 				]
 			}
