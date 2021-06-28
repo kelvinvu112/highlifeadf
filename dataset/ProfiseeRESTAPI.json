@@ -5,8 +5,17 @@
 			"referenceName": "ProfiseeRESTAPI",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"entityId": {
+				"type": "string",
+				"defaultValue": "Account"
+			}
+		},
 		"annotations": [],
 		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": ""
+		},
 		"schema": []
 	}
 }
