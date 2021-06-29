@@ -46,25 +46,7 @@
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['Idtext']"
-								}
-							},
-							{
-								"source": {
-									"name": "IsDeleted",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['IsDeleted']"
-								}
-							},
-							{
-								"source": {
-									"name": "MasterRecordId",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['MasterRecordId']"
+									"path": "$['Code']"
 								}
 							},
 							{
@@ -78,29 +60,20 @@
 							},
 							{
 								"source": {
-									"name": "Type",
+									"name": "Phone",
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['Type']"
+									"path": "$['Phone']"
 								}
 							},
 							{
 								"source": {
-									"name": "ParentId",
+									"name": "Account_Territory__c",
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['ParentId']"
-								}
-							},
-							{
-								"source": {
-									"name": "BillingStreet",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['BillingStreet']"
+									"path": "$['Account Territory']"
 								}
 							},
 							{
@@ -114,24 +87,6 @@
 							},
 							{
 								"source": {
-									"name": "BillingState",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['BillingState']"
-								}
-							},
-							{
-								"source": {
-									"name": "BillingPostalCode",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['BillingPostalCode']"
-								}
-							},
-							{
-								"source": {
 									"name": "BillingCountry",
 									"type": "String"
 								},
@@ -141,83 +96,83 @@
 							},
 							{
 								"source": {
-									"name": "BillingStateCode",
+									"name": "BillingState",
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['BillingStateCode']"
+									"path": "$['BillingStateProvince']"
 								}
 							},
 							{
 								"source": {
-									"name": "BillingCountryCode",
+									"name": "BillingStreet",
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['BillingCountryCode']"
+									"path": "$['BillingStreet']"
 								}
 							},
 							{
 								"source": {
-									"name": "BillingLatitude",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['BillingLatitude']"
-								}
-							},
-							{
-								"source": {
-									"name": "BillingLongitude",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['BillingLongitude']"
-								}
-							},
-							{
-								"source": {
-									"name": "BillingGeocodeAccuracy",
+									"name": "BillingPostalCode",
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['BillingGeocodeAccuracy']"
+									"path": "$['BillingZipPostalCode']"
 								}
 							},
 							{
 								"source": {
-									"name": "Phone",
-									"type": "String"
+									"name": "CAB_Member__c",
+									"type": "Boolean"
 								},
 								"sink": {
-									"path": "$['Phone']"
+									"path": "$['CAB Member']"
 								}
 							},
 							{
 								"source": {
-									"name": "Fax",
+									"name": "CAM__c",
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['Fax']"
+									"path": "$['CAM']"
 								}
 							},
 							{
 								"source": {
-									"name": "Website",
+									"name": "Customer_Status__c",
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['Website']"
+									"path": "$['Customer Status']"
 								}
 							},
 							{
 								"source": {
-									"name": "PhotoUrl",
-									"type": "String"
+									"name": "License_Expiration_Date__c",
+									"type": "DateTime"
 								},
 								"sink": {
-									"path": "$['PhotoUrl']"
+									"path": "$['Expiration Date']"
+								}
+							},
+							{
+								"source": {
+									"name": "License_Expiration_Date_AV__c",
+									"type": "DateTime"
+								},
+								"sink": {
+									"path": "$['Expiration Date - AV']"
+								}
+							},
+							{
+								"source": {
+									"name": "GRM_Server__c",
+									"type": "Boolean"
+								},
+								"sink": {
+									"path": "$['GRM Server']"
 								}
 							},
 							{
@@ -231,20 +186,110 @@
 							},
 							{
 								"source": {
-									"name": "AnnualRevenue",
-									"type": "Decimal"
+									"name": "Initial_Contract_Date__c",
+									"type": "DateTime"
 								},
 								"sink": {
-									"path": "$['AnnualRevenue']"
+									"path": "$['First Purchase Date']"
 								}
 							},
 							{
 								"source": {
-									"name": "NumberOfEmployees",
-									"type": "Int32"
+									"name": "Federation_Manager__c",
+									"type": "Boolean"
 								},
 								"sink": {
-									"path": "$['NumberOfEmployees']"
+									"path": "$['Integrator']"
+								}
+							},
+							{
+								"source": {
+									"name": "MDS_Support_Annivers__c",
+									"type": "DateTime"
+								},
+								"sink": {
+									"path": "$['MDS Support Anniversary']"
+								}
+							},
+							{
+								"source": {
+									"name": "MSFT_Partner__c",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['PartnerMicrosoft']"
+								}
+							},
+							{
+								"source": {
+									"name": "Netsuite_ID__c",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Customer Number']"
+								}
+							},
+							{
+								"source": {
+									"name": "OwnerId",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['SF Account Owner']"
+								}
+							},
+							{
+								"source": {
+									"name": "Partner_Status__c",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Partner Status']"
+								}
+							},
+							{
+								"source": {
+									"name": "Premium_DQ__c",
+									"type": "Boolean"
+								},
+								"sink": {
+									"path": "$['Premium DQ']"
+								}
+							},
+							{
+								"source": {
+									"name": "Profisee_MDM_Support_Anniversary__c",
+									"type": "DateTime"
+								},
+								"sink": {
+									"path": "$['Maestro Support Anniversary']"
+								}
+							},
+							{
+								"source": {
+									"name": "Profisee_MDM_Version__c",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Maestro Version']"
+								}
+							},
+							{
+								"source": {
+									"name": "SDK__c",
+									"type": "Boolean"
+								},
+								"sink": {
+									"path": "$['SDK']"
+								}
+							},
+							{
+								"source": {
+									"name": "Professional_Services_Owner__c",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Services Owner']"
 								}
 							},
 							{
@@ -258,1856 +303,11 @@
 							},
 							{
 								"source": {
-									"name": "Description",
+									"name": "Website",
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['Description']"
-								}
-							},
-							{
-								"source": {
-									"name": "Site",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Site']"
-								}
-							},
-							{
-								"source": {
-									"name": "CurrencyIsoCode",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['CurrencyIsoCode']"
-								}
-							},
-							{
-								"source": {
-									"name": "OwnerId",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['OwnerId']"
-								}
-							},
-							{
-								"source": {
-									"name": "CreatedDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['CreatedDate']"
-								}
-							},
-							{
-								"source": {
-									"name": "CreatedById",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['CreatedById']"
-								}
-							},
-							{
-								"source": {
-									"name": "LastModifiedDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['LastModifiedDate']"
-								}
-							},
-							{
-								"source": {
-									"name": "LastModifiedById",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['LastModifiedById']"
-								}
-							},
-							{
-								"source": {
-									"name": "SystemModstamp",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['SystemModstamp']"
-								}
-							},
-							{
-								"source": {
-									"name": "LastActivityDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['LastActivityDate']"
-								}
-							},
-							{
-								"source": {
-									"name": "LastViewedDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['LastViewedDate']"
-								}
-							},
-							{
-								"source": {
-									"name": "LastReferencedDate",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['LastReferencedDate']"
-								}
-							},
-							{
-								"source": {
-									"name": "JigsawCompanyId",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['JigsawCompanyId']"
-								}
-							},
-							{
-								"source": {
-									"name": "Fiscal_Year_End__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Fiscal_Year_End__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AdClicksRolling30__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['AdClicksRolling30__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "MSFT_Sales_Rep__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['MSFT_Sales_Rep__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "MSFT_SQL_Server_Solution_Specialist__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['MSFT_SQL_Server_Solution_Specialist__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "MSFT_App_Platform_Solution_Specialist__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['MSFT_App_Platform_Solution_Specialist__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AdClicksRolling90__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['AdClicksRolling90__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AdDataUpToDateAsOf__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['AdDataUpToDateAsOf__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AdImpressionsRolling30__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['AdImpressionsRolling30__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AdImpressionsRolling90__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['AdImpressionsRolling90__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AdSpendMtD__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['AdSpendMtD__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AdSpendQtD__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['AdSpendQtD__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Deployment_Platform__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Deployment_Platform__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Profisee_MDM_Administrator__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Profisee_MDM_Administrator__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Profisee_MDM_Support_Anniversary__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['Profisee_MDM_Support_Anniversary__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "MDS_Support_Annivers__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['MDS_Support_Annivers__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Lead_Source_CLOSED_Maestro_MDS_accts__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Lead_Source_CLOSED_Maestro_MDS_accts__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Master_Data_Models__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Master_Data_Models__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Days_Since_Last_Activity__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Days_Since_Last_Activity__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AssociatedTerminusAccountsUpToDateAsOf__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['AssociatedTerminusAccountsUpToDateAsOf__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Profisee_MDM_Version__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Profisee_MDM_Version__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AssociatedTerminusAccounts__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['AssociatedTerminusAccounts__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Support_Payment__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Support_Payment__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "DSCs__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['DSCs__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "EndOfSurge__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['EndOfSurge__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "HighestSurgePercent__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['HighestSurgePercent__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LastAdClickDate__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['LastAdClickDate__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "MDM_Type__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['MDM_Type__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LastUniqueVisitorsSnapshot__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['LastUniqueVisitorsSnapshot__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Deployment_Status__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Deployment_Status__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LastVisitMoment__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['LastVisitMoment__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LastVisitSessionsSnapshot__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['LastVisitSessionsSnapshot__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "StartOfSurge__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['StartOfSurge__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Customer_Status__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Customer_Status__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SurgeDataUpToDateAsOf__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['SurgeDataUpToDateAsOf__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Surge_Heat__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Surge_Heat__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "License_Expiration_Date__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['License_Expiration_Date__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "License_Expiration_Date_AV__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['License_Expiration_Date_AV__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SurgingAwarenessPages__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['SurgingAwarenessPages__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Processor_Cores__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Processor_Cores__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SDK__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['SDK__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Adapters__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Adapters__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "GRM_Server__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['GRM_Server__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Premium_DQ__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Premium_DQ__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Premium_DQ_IDs__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Premium_DQ_IDs__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Industry_Solutions__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Industry_Solutions__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Open_New_Opportunities__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Open_New_Opportunities__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SurgingHighValuePages__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['SurgingHighValuePages__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SurgingModels__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['SurgingModels__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Profisee_MDM_Users__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Profisee_MDM_Users__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Premium_DQ_Regions__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Premium_DQ_Regions__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "TerminusAccountListsUpdatedMomentUtc__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['TerminusAccountListsUpdatedMomentUtc__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Connector__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Connector__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Date_MQA__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['Date_MQA__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SQL_Server_Account__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['SQL_Server_Account__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "TerminusAccountLists__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['TerminusAccountLists__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "UniqueWebVisitorsRolling30__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['UniqueWebVisitorsRolling30__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Possible_MDS_Use__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Possible_MDS_Use__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Partner_Type__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Partner_Type__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "WebVisitDataUpToDateAsOf__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['WebVisitDataUpToDateAsOf__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "WebVisitsRolling30__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['WebVisitsRolling30__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Prospect_LOB__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Prospect_LOB__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Customer_Category__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Customer_Category__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SI_Target__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['SI_Target__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Microsoft_Technologies__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Microsoft_Technologies__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Competitor_Technologies__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Competitor_Technologies__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Active_Account_Nurture__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Active_Account_Nurture__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Territory__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Territory__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Uses_MDS__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Uses_MDS__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Closed_Won_Opportunities__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Closed_Won_Opportunities__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Prospecting_Owner__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Prospecting_Owner__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Import_Lead_Source_Account__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Import_Lead_Source_Account__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Services__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Services__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Federation_Manager__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Federation_Manager__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Connectors__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Connectors__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_ID__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_ID__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Event_Influence__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Event_Influence__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Event_Type__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Event_Type__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Software_Revenue_Account__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Software_Revenue_Account__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Campaign_Influence__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Campaign_Influence__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "bizible2__Engagement_Score__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['bizible2__Engagement_Score__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Power_of_1__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Account_Power_of_1__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Active_Accounts_14_days__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Active_Accounts_14_days__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Top_Account__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Top_Account__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "bombora_app__Bombora_Avg_Composite_Score__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['bombora_app__Bombora_Avg_Composite_Score__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "bombora_app__Bombora_Last_Date_Time_Updated__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['bombora_app__Bombora_Last_Date_Time_Updated__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "bombora_app__Bombora_Surge_Record_Count__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['bombora_app__Bombora_Surge_Record_Count__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "bombora_app__Bombora_Total_Composite_Score__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['bombora_app__Bombora_Total_Composite_Score__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Partner_Sales_Rep_2__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Partner_Sales_Rep_2__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Closed_Lost_Opportunities__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Closed_Lost_Opportunities__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Open_Expansion_Opportunities__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Open_Expansion_Opportunities__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Open_Software_Renewal_Opportunities__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Open_Software_Renewal_Opportunities__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Open_Support_Renewal_Opportunities__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Open_Support_Renewal_Opportunities__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "ABM_Target__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['ABM_Target__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Partner_Sales_Rep_1__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Partner_Sales_Rep_1__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Partner_Notes_1__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Partner_Notes_1__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Bombora_Total_Composite_Score_MDM__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Bombora_Total_Composite_Score_MDM__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Bombora_Surge_Record_Count_MDM__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Bombora_Surge_Record_Count_MDM__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Bombora_Average_Composite_Score_MDM__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Bombora_Average_Composite_Score_MDM__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Microsoft_Target__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Microsoft_Target__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Sub_Industry__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Sub_Industry__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "ZoomInfo_Profile_URL__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['ZoomInfo_Profile_URL__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Uses_Microsoft_Technologies__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Uses_Microsoft_Technologies__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Gong__Gong_Count__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Gong__Gong_Count__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Microsoft_Account_Type__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Microsoft_Account_Type__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Owner_Active__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Owner_Active__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Case_Studies__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Case_Studies__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Professional_Services_Owner__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Professional_Services_Owner__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "CAB_Member__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['CAB_Member__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Profisee_MDM_Anniversary_Timer__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Profisee_MDM_Anniversary_Timer__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_MDM_Master__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_MDM_Master__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "NAICS_Code__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['NAICS_Code__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Support_Timezone__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Support_Timezone__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Support_Region__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Support_Region__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SIGSTR__R_Score__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['SIGSTR__R_Score__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Sub_Industry_dep__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Sub_Industry_dep__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Domain__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Domain__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Current_Customer__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Current_Customer__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Territory_Dep__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Territory_Dep__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Academy_Seats__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Academy_Seats__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SIGSTR__SigstrSync__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['SIGSTR__SigstrSync__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Prospecting_Status__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Prospecting_Status__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Partner_Status__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Partner_Status__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "MSFT_Partner__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['MSFT_Partner__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Partner_Notes__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Partner_Notes__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "MQA_Status__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['MQA_Status__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Sales_Territory__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Sales_Territory__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Notes__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_Notes__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Tier_1_Target_Account__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Tier_1_Target_Account__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Tier_2_Target_Account__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Tier_2_Target_Account__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Tier_3_Target_Account__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Tier_3_Target_Account__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "BDR_Territory__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['BDR_Territory__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Score_Add_30__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Account_Score_Add_30__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Score_Subtract_30__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Account_Score_Subtract_30__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Parent_Company_Name__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Parent_Company_Name__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Ultimate_Parent_Company_Name__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Ultimate_Parent_Company_Name__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Parent_Company_ZoomInfo_ID__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Parent_Company_ZoomInfo_ID__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Ultimate_Parent_Company_ZoomInfo_ID__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Ultimate_Parent_Company_ZoomInfo_ID__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Technologies__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Technologies__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "MagentrixOne__TrackSecurityGroup_mgtrx__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['MagentrixOne__TrackSecurityGroup_mgtrx__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "CAM__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['CAM__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Initial_Contract_Date__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['Initial_Contract_Date__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Acct_Opp_Re_engage_Campaign__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Acct_Opp_Re_engage_Campaign__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "USA_East__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['USA_East__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "USA_West__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['USA_West__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "EMEA1__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['EMEA1__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "EMEA2__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['EMEA2__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "EMEA3__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['EMEA3__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "UK__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['UK__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "ROW1__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['ROW1__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "ROW2__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['ROW2__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Territory__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_Territory__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "ROW3__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['ROW3__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "NA_State_Country__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['NA_State_Country__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Current_Month_Average_CES__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Current_Month_Average_CES__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Current_Month_Average_CSAT__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Current_Month_Average_CSAT__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Current_Month_NPS_Calculation_Date__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['Wootric__Current_Month_NPS_Calculation_Date__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Current_Month_NPS__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Current_Month_NPS__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Current_Quarter_Average_CES__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Current_Quarter_Average_CES__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Current_Quarter_Average_CSAT__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Current_Quarter_Average_CSAT__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Current_Quarter_NPS_Calculation_Date__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['Wootric__Current_Quarter_NPS_Calculation_Date__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Current_Quarter_NPS__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Current_Quarter_NPS__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__External_Id__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Wootric__External_Id__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Previous_Month_Average_CES__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Previous_Month_Average_CES__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Previous_Month_Average_CSAT__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Previous_Month_Average_CSAT__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Previous_Month_Calculation_Date__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['Wootric__Previous_Month_Calculation_Date__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Previous_Month_NPS__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Previous_Month_NPS__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Previous_Quarter_Average_CES__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Previous_Quarter_Average_CES__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Previous_Quarter_Average_CSAT__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Previous_Quarter_Average_CSAT__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Previous_Quarter_Calculation_Date__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['Wootric__Previous_Quarter_Calculation_Date__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Wootric__Previous_Quarter_NPS__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Wootric__Previous_Quarter_NPS__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AT_EMEA_1__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['AT_EMEA_1__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AT_EMEA_2__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['AT_EMEA_2__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AT_ROW__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['AT_ROW__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AT_UK__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['AT_UK__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AT_USA__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['AT_USA__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "AT_NA__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['AT_NA__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "DT_Scoop__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['DT_Scoop__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Annual_Revenue_Range__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Annual_Revenue_Range__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Pardot_Score__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Account_Pardot_Score__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Passed_Opp__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Passed_Opp__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Active_Opp__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Active_Opp__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Won_Opp__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Won_Opp__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Lost_Opp__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Lost_Opp__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Partner_Co_Branding_Tier__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Partner_Co_Branding_Tier__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_SDK__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_SDK__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_GRM__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_GRM__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_PDQ__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_PDQ__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_Portal__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_Portal__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_Eventing__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_Eventing__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_Workflow__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_Workflow__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_Federation__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_Federation__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_Dynamics_AX__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_Dynamics_AX__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_Dynamics_CRM__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_Dynamics_CRM__c']"
+									"path": "$['Website']"
 								}
 							},
 							{
@@ -2116,295 +316,7 @@
 									"type": "Boolean"
 								},
 								"sink": {
-									"path": "$['LIC_Salesforce__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_SAP__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_SAP__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LIC_SAP_Enums__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LIC_SAP_Enums__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "DOZISF__ZoomInfo_First_Updated__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['DOZISF__ZoomInfo_First_Updated__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "DOZISF__ZoomInfo_Id__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['DOZISF__ZoomInfo_Id__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "DOZISF__ZoomInfo_Last_Updated__c",
-									"type": "DateTime"
-								},
-								"sink": {
-									"path": "$['DOZISF__ZoomInfo_Last_Updated__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "LAST_18__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['LAST_18__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Average_NPS__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Account_Average_NPS__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Use_Case__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Use_Case__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Incumbent__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Incumbent__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Uses_MDM__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Uses_MDM__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Netsuite_ID__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Netsuite_ID__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "URL_to_Job_Posting__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['URL_to_Job_Posting__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Open_Opps__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Open_Opps__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Owner_Role__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Owner_Role__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Segmentation__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_Segmentation__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Segmentation_Details__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_Segmentation_Details__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Health__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_Health__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Health_Action_Plan__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_Health_Action_Plan__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Intimacy__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_Intimacy__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Intimacy_Action_Plan__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_Intimacy_Action_Plan__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Informatica_Partner__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Informatica_Partner__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "License_Metric__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['License_Metric__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "White_Space__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['White_Space__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Territory_Owner__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Territory_Owner__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Employee_Range__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Employee_Range__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Count_of_Contacts__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Count_of_Contacts__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Score__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Account_Score__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SI_Partner_Rollup__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['SI_Partner_Rollup__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "SI_Partner__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['SI_Partner__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Open_Opportunities__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Open_Opportunities__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Account_Score_Grade__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Account_Score_Grade__c']"
-								}
-							},
-							{
-								"source": {
-									"name": "Source System",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Source System']"
+									"path": "$['Record Source']"
 								}
 							}
 						]
