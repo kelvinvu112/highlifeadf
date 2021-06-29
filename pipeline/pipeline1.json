@@ -309,15 +309,6 @@
 								"sink": {
 									"path": "$['Website']"
 								}
-							},
-							{
-								"source": {
-									"name": "LIC_Salesforce__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Record Source']"
-								}
 							}
 						]
 					}
