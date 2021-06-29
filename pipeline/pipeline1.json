@@ -19,7 +19,7 @@
 						"type": "SalesforceSource",
 						"additionalColumns": [
 							{
-								"name": "Source System",
+								"name": "Record Source",
 								"value": {
 									"value": "Salesforce",
 									"type": "Expression"
