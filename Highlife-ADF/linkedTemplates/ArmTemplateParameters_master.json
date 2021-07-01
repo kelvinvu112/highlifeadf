@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Highlife-ADF"
+		},
+		"Salesforce1_password": {
+			"value": ""
+		},
+		"Salesforce1_securityToken": {
+			"value": ""
+		},
+		"ProfiseeRESTAPI_properties_typeProperties_url": {
+			"value": "https://highlifedev.services.profisee.com/rest/v1"
+		},
+		"Salesforce1_properties_typeProperties_environmentUrl": {
+			"value": "https://profisee.my.salesforce.com/"
+		},
+		"Salesforce1_properties_typeProperties_username": {
+			"value": "lee.gregory@profisee.com"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
