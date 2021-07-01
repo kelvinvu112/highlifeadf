@@ -1,12 +1,19 @@
 {
 	"name": "RestService1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://webhook.site/fe0c46d5-4dda-42d7-b11f-0a4c811e6a1d",
+			"url": "https://highlifedev.services.profisee.com/profisee/rest/v1",
 			"enableServerCertificateValidation": true,
-			"authenticationType": "Anonymous"
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"X-API-Key": {
+					"type": "SecureString",
+					"value": "**********"
+				}
+			}
 		}
 	}
 }
