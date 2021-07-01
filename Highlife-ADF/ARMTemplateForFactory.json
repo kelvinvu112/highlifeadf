@@ -611,7 +611,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "RestService1",
+					"referenceName": "ProfiseeRESTAPI",
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
@@ -631,7 +631,7 @@
 				"schema": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/RestService1')]"
+				"[concat(variables('factoryId'), '/linkedServices/ProfiseeRESTAPI')]"
 			]
 		},
 		{
