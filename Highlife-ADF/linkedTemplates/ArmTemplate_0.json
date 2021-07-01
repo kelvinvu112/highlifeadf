@@ -185,7 +185,10 @@
 				"annotations": [],
 				"type": "RestResource",
 				"typeProperties": {
-					"relativeUrl": ""
+					"relativeUrl": {
+						"value": "@concat(\n'records/',\ndataset().entityId,\n'/?isUpsert=true'\n)",
+						"type": "Expression"
+					}
 				},
 				"schema": []
 			},
