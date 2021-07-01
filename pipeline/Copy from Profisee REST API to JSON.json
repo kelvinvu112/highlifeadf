@@ -1,0 +1,75 @@
+{
+	"name": "Copy from Profisee REST API to JSON",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy from Profisee REST API to JSON",
+				"description": "Copy records from Profisee via the Profisee REST API to ADLS Gen2 in JSON format.",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SalesforceSource",
+						"readBehavior": "query"
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"filePattern": "arrayOfObjects"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "SalesforceObject1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AdlsGen2BlobJson",
+						"type": "DatasetReference",
+						"parameters": {
+							"FolderName": {
+								"value": "@concat(variables('OutputContainer'), '/', variables('EntityId'))",
+								"type": "Expression"
+							},
+							"FileName": {
+								"value": "@concat(variables('EntityId'), '_', string(utcnow()), '.json')",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"variables": {
+			"OutputContainer": {
+				"type": "String",
+				"defaultValue": "profisee-output"
+			},
+			"EntityId": {
+				"type": "String",
+				"defaultValue": "Account"
+			}
+		},
+		"folder": {
+			"name": "JSON Format"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-09-25T15:29:08Z"
+	}
+}
