@@ -19,7 +19,7 @@
 						"type": "SalesforceSource",
 						"additionalColumns": [
 							{
-								"name": "Record Source",
+								"name": "RecordSource",
 								"value": {
 									"value": "Salesforce",
 									"type": "Expression"
@@ -30,10 +30,10 @@
 					},
 					"sink": {
 						"type": "RestSink",
-						"httpRequestTimeout": "00:01:40",
+						"httpRequestTimeout": "00:05:00",
 						"requestInterval": 10,
 						"requestMethod": "PATCH",
-						"writeBatchSize": 10000,
+						"writeBatchSize": "500",
 						"httpCompressionType": "none"
 					},
 					"enableStaging": false,
@@ -308,6 +308,14 @@
 								},
 								"sink": {
 									"path": "$['Website']"
+								}
+							},
+							{
+								"source": {
+									"name": "RecordSource"
+								},
+								"sink": {
+									"path": "$['RecordSource']"
 								}
 							}
 						]
