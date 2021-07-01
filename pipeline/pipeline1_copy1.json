@@ -17,15 +17,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "SalesforceSource",
-						"additionalColumns": [
-							{
-								"name": "RecordSource",
-								"value": {
-									"value": "Salesforce",
-									"type": "Expression"
-								}
-							}
-						],
 						"readBehavior": "query"
 					},
 					"sink": {
