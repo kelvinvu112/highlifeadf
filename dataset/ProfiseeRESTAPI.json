@@ -2,7 +2,7 @@
 	"name": "ProfiseeRESTAPI",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "RestService1",
+			"referenceName": "ProfiseeRESTAPI",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
