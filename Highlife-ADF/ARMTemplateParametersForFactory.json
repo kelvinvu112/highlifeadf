@@ -5,13 +5,22 @@
 		"factoryName": {
 			"value": "Highlife-ADF"
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"Salesforce1_password": {
 			"value": ""
 		},
 		"Salesforce1_securityToken": {
 			"value": ""
 		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://rdprofiseehighlife.dfs.core.windows.net"
+		},
 		"ProfiseeRESTAPI_properties_typeProperties_url": {
+			"value": "https://highlifedev.services.profisee.com/profisee/rest/v1"
+		},
+		"RestService1_properties_typeProperties_url": {
 			"value": "https://highlifedev.services.profisee.com/profisee/rest/v1"
 		},
 		"Salesforce1_properties_typeProperties_environmentUrl": {
