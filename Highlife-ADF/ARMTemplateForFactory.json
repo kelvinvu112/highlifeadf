@@ -149,7 +149,7 @@
 								"type": "SalesforceSource",
 								"additionalColumns": [
 									{
-										"name": "RecordSource",
+										"name": "Record Source",
 										"value": {
 											"value": "Salesforce",
 											"type": "Expression"
@@ -438,14 +438,6 @@
 										},
 										"sink": {
 											"path": "$['Website']"
-										}
-									},
-									{
-										"source": {
-											"name": "RecordSource"
-										},
-										"sink": {
-											"path": "$['RecordSource']"
 										}
 									}
 								]
