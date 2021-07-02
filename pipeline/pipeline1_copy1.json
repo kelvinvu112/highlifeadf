@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SalesforceSource",
+						"query": "SELECT ID, NAME, Account_Territory__c from Account LIMIT 10",
 						"readBehavior": "query"
 					},
 					"sink": {
