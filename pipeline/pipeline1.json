@@ -26,7 +26,7 @@
 								}
 							}
 						],
-						"query": "SELECT Id,Name,Phone,Account_Territory__c,Type,AnnualRevenue,BillingCity,BillingCountry,BillingState,BillingStreet,BillingPostalCode,CAB_Member__c,CAM__c,Customer_Status__c,License_Expiration_Date__c,License_Expiration_Date_AV__c,GRM_Server__c,Industry,Initial_Contract_Date__c,Federation_Manager__c,MDS_Support_Annivers__c,MSFT_Partner__c,Netsuite_ID__c,Partner_Status__c,Premium_DQ__c,Profisee_MDM_Support_Anniversary__c,Profisee_MDM_Version__c,SDK__c,TickerSymbol,Website from Account LIMIT 446\n",
+						"query": "SELECT Id,Name,Phone,Account_Territory__c,Type,AnnualRevenue,BillingCity,BillingCountry,BillingState,BillingStreet,BillingPostalCode,CAB_Member__c,CAM__c,Customer_Status__c,License_Expiration_Date__c,License_Expiration_Date_AV__c,GRM_Server__c,Industry,Initial_Contract_Date__c,Federation_Manager__c,MDS_Support_Annivers__c,MSFT_Partner__c,Netsuite_ID__c,OwnerId,Partner_Status__c,Premium_DQ__c,Profisee_MDM_Support_Anniversary__c,Profisee_MDM_Version__c,SDK__c,TickerSymbol,Website from Account WHERE Id = '0010g00001azmrMAAQ\n'\n\n",
 						"readBehavior": "query"
 					},
 					"sink": {
@@ -290,6 +290,14 @@
 								},
 								"sink": {
 									"path": "$['CAM']"
+								}
+							},
+							{
+								"source": {
+									"name": "OwnerId"
+								},
+								"sink": {
+									"path": "$['SF Account Owner']"
 								}
 							}
 						]
