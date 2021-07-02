@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SalesforceSource",
-						"query": "SELECT Id,Name from User LIMIT 10\n",
+						"query": "SELECT Id,Name from User\n",
 						"readBehavior": "query"
 					},
 					"sink": {
