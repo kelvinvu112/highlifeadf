@@ -1,0 +1,448 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "Highlife-ADF"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Account Copy Data')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "SalesForce Accounts to REST API",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SalesforceSource",
+								"additionalColumns": [
+									{
+										"name": "Record Source",
+										"value": {
+											"value": "Salesforce",
+											"type": "Expression"
+										}
+									}
+								],
+								"query": "SELECT Id,Name,Phone,Account_Territory__c,Type,AnnualRevenue,BillingCity,BillingCountry,BillingState,BillingStreet,BillingPostalCode,CAB_Member__c,CAM__c,Customer_Status__c,License_Expiration_Date__c,License_Expiration_Date_AV__c,GRM_Server__c,Industry,Initial_Contract_Date__c,Federation_Manager__c,MDS_Support_Annivers__c,MSFT_Partner__c,Netsuite_ID__c,OwnerId,Partner_Status__c,Premium_DQ__c,Profisee_MDM_Support_Anniversary__c,Profisee_MDM_Version__c,SDK__c,TickerSymbol,Website from Account LIMIT 500\n\n",
+								"readBehavior": "query"
+							},
+							"sink": {
+								"type": "RestSink",
+								"httpRequestTimeout": "00:05:00",
+								"requestInterval": 10,
+								"requestMethod": "PATCH",
+								"writeBatchSize": "500",
+								"httpCompressionType": "none"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Id",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Code']"
+										}
+									},
+									{
+										"source": {
+											"name": "Name",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Name']"
+										}
+									},
+									{
+										"source": {
+											"name": "Phone",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Phone']"
+										}
+									},
+									{
+										"source": {
+											"name": "Account_Territory__c",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Account Territory']"
+										}
+									},
+									{
+										"source": {
+											"name": "BillingCity",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['BillingCity']"
+										}
+									},
+									{
+										"source": {
+											"name": "BillingCountry",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['BillingCountry']"
+										}
+									},
+									{
+										"source": {
+											"name": "BillingState",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['BillingStateProvince']"
+										}
+									},
+									{
+										"source": {
+											"name": "BillingStreet",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['BillingStreet']"
+										}
+									},
+									{
+										"source": {
+											"name": "BillingPostalCode",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['BillingZipPostalCode']"
+										}
+									},
+									{
+										"source": {
+											"name": "CAB_Member__c",
+											"type": "Boolean"
+										},
+										"sink": {
+											"path": "$['CAB Member']"
+										}
+									},
+									{
+										"source": {
+											"name": "Customer_Status__c",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Customer Status']"
+										}
+									},
+									{
+										"source": {
+											"name": "License_Expiration_Date__c",
+											"type": "DateTime"
+										},
+										"sink": {
+											"path": "$['Expiration Date']"
+										}
+									},
+									{
+										"source": {
+											"name": "License_Expiration_Date_AV__c",
+											"type": "DateTime"
+										},
+										"sink": {
+											"path": "$['Expiration Date - AV']"
+										}
+									},
+									{
+										"source": {
+											"name": "GRM_Server__c",
+											"type": "Boolean"
+										},
+										"sink": {
+											"path": "$['GRM Server']"
+										}
+									},
+									{
+										"source": {
+											"name": "Industry",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Industry']"
+										}
+									},
+									{
+										"source": {
+											"name": "Initial_Contract_Date__c",
+											"type": "DateTime"
+										},
+										"sink": {
+											"path": "$['First Purchase Date']"
+										}
+									},
+									{
+										"source": {
+											"name": "Federation_Manager__c",
+											"type": "Boolean"
+										},
+										"sink": {
+											"path": "$['Integrator']"
+										}
+									},
+									{
+										"source": {
+											"name": "MDS_Support_Annivers__c",
+											"type": "DateTime"
+										},
+										"sink": {
+											"path": "$['MDS Support Anniversary']"
+										}
+									},
+									{
+										"source": {
+											"name": "MSFT_Partner__c",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['PartnerMicrosoft']"
+										}
+									},
+									{
+										"source": {
+											"name": "Netsuite_ID__c",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Customer Number']"
+										}
+									},
+									{
+										"source": {
+											"name": "Partner_Status__c",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Partner Status']"
+										}
+									},
+									{
+										"source": {
+											"name": "Premium_DQ__c",
+											"type": "Boolean"
+										},
+										"sink": {
+											"path": "$['Premium DQ']"
+										}
+									},
+									{
+										"source": {
+											"name": "Profisee_MDM_Support_Anniversary__c",
+											"type": "DateTime"
+										},
+										"sink": {
+											"path": "$['Maestro Support Anniversary']"
+										}
+									},
+									{
+										"source": {
+											"name": "Profisee_MDM_Version__c",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Maestro Version']"
+										}
+									},
+									{
+										"source": {
+											"name": "SDK__c",
+											"type": "Boolean"
+										},
+										"sink": {
+											"path": "$['SDK']"
+										}
+									},
+									{
+										"source": {
+											"name": "TickerSymbol",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['TickerSymbol']"
+										}
+									},
+									{
+										"source": {
+											"name": "Website",
+											"type": "String"
+										},
+										"sink": {
+											"path": "$['Website']"
+										}
+									},
+									{
+										"source": {
+											"name": "CAM__c"
+										},
+										"sink": {
+											"path": "$['CAM']"
+										}
+									},
+									{
+										"source": {
+											"name": "OwnerId"
+										},
+										"sink": {
+											"path": "$['SF Account Owner']"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SalesforceObject1",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "ProfiseeRESTAPI",
+								"type": "DatasetReference",
+								"parameters": {
+									"entityId": "Account"
+								}
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Salesforce"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/User Copy Data')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SalesforceSource",
+								"query": "SELECT Id,Name from User\n",
+								"readBehavior": "query"
+							},
+							"sink": {
+								"type": "RestSink",
+								"httpRequestTimeout": "00:05:00",
+								"requestInterval": 10,
+								"requestMethod": "POST",
+								"writeBatchSize": "500",
+								"httpCompressionType": "none"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "Id"
+										},
+										"sink": {
+											"path": "$['Code']"
+										}
+									},
+									{
+										"source": {
+											"name": "Name"
+										},
+										"sink": {
+											"path": "$['Name']"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SalesforceObject1",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "ProfiseeRESTAPI",
+								"type": "DatasetReference",
+								"parameters": {
+									"entityId": "Salesforce Users"
+								}
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Salesforce"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SalesforceObject1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Salesforce1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SalesforceObject",
+				"schema": [],
+				"typeProperties": {
+					"objectApiName": "Account"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
