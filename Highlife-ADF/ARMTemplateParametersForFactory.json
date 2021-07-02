@@ -20,9 +20,6 @@
 		"ProfiseeRESTAPI_properties_typeProperties_url": {
 			"value": "https://highlifedev.services.profisee.com/profisee/rest/v1"
 		},
-		"RestService1_properties_typeProperties_url": {
-			"value": "https://highlifedev.services.profisee.com/profisee/rest/v1"
-		},
 		"Salesforce1_properties_typeProperties_environmentUrl": {
 			"value": "https://profisee.my.salesforce.com/"
 		},

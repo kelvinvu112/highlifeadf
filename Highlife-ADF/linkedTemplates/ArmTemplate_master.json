@@ -27,10 +27,6 @@
 			"type": "string",
 			"defaultValue": "https://highlifedev.services.profisee.com/profisee/rest/v1"
 		},
-		"RestService1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://highlifedev.services.profisee.com/profisee/rest/v1"
-		},
 		"Salesforce1_properties_typeProperties_environmentUrl": {
 			"type": "string",
 			"defaultValue": "https://profisee.my.salesforce.com/"
@@ -80,9 +76,6 @@
 					},
 					"ProfiseeRESTAPI_properties_typeProperties_url": {
 						"value": "[parameters('ProfiseeRESTAPI_properties_typeProperties_url')]"
-					},
-					"RestService1_properties_typeProperties_url": {
-						"value": "[parameters('RestService1_properties_typeProperties_url')]"
 					},
 					"Salesforce1_properties_typeProperties_environmentUrl": {
 						"value": "[parameters('Salesforce1_properties_typeProperties_environmentUrl')]"
