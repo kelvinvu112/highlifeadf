@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Account Copy Data",
 	"properties": {
 		"activities": [
 			{
