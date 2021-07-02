@@ -214,15 +214,6 @@
 							},
 							{
 								"source": {
-									"name": "Netsuite_ID__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Customer Number']"
-								}
-							},
-							{
-								"source": {
 									"name": "OwnerId",
 									"type": "String"
 								},
