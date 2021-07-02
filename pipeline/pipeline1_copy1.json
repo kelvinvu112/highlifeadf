@@ -48,6 +48,14 @@
 								"sink": {
 									"path": "$['Name']"
 								}
+							},
+							{
+								"source": {
+									"name": "Account_Territory__c"
+								},
+								"sink": {
+									"path": "$['Account Territory']"
+								}
 							}
 						]
 					}
