@@ -6,354 +6,12 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "Highlife-ADF"
-		},
-		"AzureDataLakeStorage1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
-		},
-		"Salesforce1_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'Salesforce1'"
-		},
-		"Salesforce1_securityToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'securityToken' of 'Salesforce1'"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://rdprofiseehighlife.dfs.core.windows.net"
-		},
-		"ProfiseeRESTAPI_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://highlifedev.services.profisee.com/profisee/rest/v1"
-		},
-		"RestService1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://highlifedev.services.profisee.com/profisee/rest/v1"
-		},
-		"Salesforce1_properties_typeProperties_environmentUrl": {
-			"type": "string",
-			"defaultValue": "https://profisee.my.salesforce.com/"
-		},
-		"Salesforce1_properties_typeProperties_username": {
-			"type": "string",
-			"defaultValue": "lee.gregory@profisee.com"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ProfiseeRESTAPI')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('ProfiseeRESTAPI_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous",
-					"authHeaders": {
-						"X-API-Key": {
-							"type": "SecureString",
-							"value": "**********"
-						}
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RestService1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('RestService1_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous",
-					"authHeaders": {
-						"X-API-Key": {
-							"type": "SecureString",
-							"value": "**********"
-						}
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Salesforce1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "Salesforce",
-				"typeProperties": {
-					"environmentUrl": "[parameters('Salesforce1_properties_typeProperties_environmentUrl')]",
-					"username": "[parameters('Salesforce1_properties_typeProperties_username')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('Salesforce1_password')]"
-					},
-					"securityToken": {
-						"type": "SecureString",
-						"value": "[parameters('Salesforce1_securityToken')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AdlsGen2BlobJson')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Azure Data Lake Storage Gen2 container for JSON format.",
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"FolderName": {
-						"type": "string"
-					},
-					"FileName": {
-						"type": "string"
-					}
-				},
-				"folder": {
-					"name": "JSON Format"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@dataset().FileName",
-							"type": "Expression"
-						},
-						"fileSystem": {
-							"value": "@dataset().FolderName",
-							"type": "Expression"
-						}
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ProfiseeRESTAPI')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ProfiseeRESTAPI",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"entityId": {
-						"type": "string",
-						"defaultValue": "Account"
-					}
-				},
-				"annotations": [],
-				"type": "RestResource",
-				"typeProperties": {
-					"relativeUrl": {
-						"value": "@concat(\n'records/',\ndataset().entityId,\n'/?isUpsert=true'\n)",
-						"type": "Expression"
-					}
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ProfiseeRESTAPI')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ProfiseeRESTAPI_Records_Get')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Profisee members get REST API call.",
-				"linkedServiceName": {
-					"referenceName": "ProfiseeRESTAPI",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"entityId": {
-						"type": "string"
-					},
-					"pageSize": {
-						"type": "int",
-						"defaultValue": 1000
-					},
-					"attributes": {
-						"type": "string",
-						"defaultValue": " "
-					},
-					"filter": {
-						"type": "string",
-						"defaultValue": " "
-					},
-					"orderBy": {
-						"type": "string",
-						"defaultValue": " "
-					},
-					"dbaFormat": {
-						"type": "int",
-						"defaultValue": 1
-					},
-					"recordCodes": {
-						"type": "string",
-						"defaultValue": " "
-					}
-				},
-				"folder": {
-					"name": "Profisee REST API"
-				},
-				"annotations": [],
-				"type": "RestResource",
-				"typeProperties": {
-					"relativeUrl": {
-						"value": "@concat(\n'records/',\ndataset().entityId, \n'/?pageSize=', string(dataset().pageSize),\n'&attributes=', dataset().attributes,\n'&filter=', dataset().filter,\n'&orderBy=', dataset().orderBy,\n'&recordCodes=', dataset().recordCodes,\n'&dbaFormat=', string(dataset().dbaFormat)\n)",
-						"type": "Expression"
-					}
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ProfiseeRESTAPI')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SalesforceObject1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Salesforce1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SalesforceObject",
-				"schema": [],
-				"typeProperties": {
-					"objectApiName": "User"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Salesforce1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Copy from Profisee REST API to JSON')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy from Profisee REST API to JSON",
-						"description": "Copy records from Profisee via the Profisee REST API to ADLS Gen2 in JSON format.",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "SalesforceSource",
-								"readBehavior": "query"
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings",
-									"filePattern": "arrayOfObjects"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "SalesforceObject1",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "AdlsGen2BlobJson",
-								"type": "DatasetReference",
-								"parameters": {
-									"FolderName": {
-										"value": "@concat(variables('OutputContainer'), '/', variables('EntityId'))",
-										"type": "Expression"
-									},
-									"FileName": {
-										"value": "@concat(variables('EntityId'), '_', string(utcnow()), '.json')",
-										"type": "Expression"
-									}
-								}
-							}
-						]
-					}
-				],
-				"variables": {
-					"OutputContainer": {
-						"type": "String",
-						"defaultValue": "profisee-output"
-					},
-					"EntityId": {
-						"type": "String",
-						"defaultValue": "Account"
-					}
-				},
-				"folder": {
-					"name": "JSON Format"
-				},
-				"annotations": [],
-				"lastPublishTime": "2020-09-25T15:29:08Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]",
-				"[concat(variables('factoryId'), '/datasets/AdlsGen2BlobJson')]"
-			]
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Account Copy Data')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -647,8 +305,7 @@
 						"inputs": [
 							{
 								"referenceName": "SalesforceObject1",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
@@ -668,8 +325,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]",
-				"[concat(variables('factoryId'), '/datasets/ProfiseeRESTAPI')]"
+				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]"
 			]
 		},
 		{
@@ -740,8 +396,7 @@
 						"inputs": [
 							{
 								"referenceName": "SalesforceObject1",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
@@ -761,9 +416,26 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]",
-				"[concat(variables('factoryId'), '/datasets/ProfiseeRESTAPI')]"
+				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SalesforceObject1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Salesforce1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SalesforceObject",
+				"schema": [],
+				"typeProperties": {
+					"objectApiName": "User"
+				}
+			},
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/User Copy Data')]",
@@ -801,8 +473,7 @@
 						"inputs": [
 							{
 								"referenceName": "SalesforceObject1",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
@@ -822,8 +493,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]",
-				"[concat(variables('factoryId'), '/datasets/ProfiseeRESTAPI')]"
+				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]"
 			]
 		}
 	]
