@@ -133,15 +133,6 @@
 							},
 							{
 								"source": {
-									"name": "CAM__c",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['CAM']"
-								}
-							},
-							{
-								"source": {
 									"name": "Customer_Status__c",
 									"type": "String"
 								},
