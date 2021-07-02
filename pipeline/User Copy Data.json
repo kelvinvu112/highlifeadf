@@ -27,7 +27,28 @@
 						"writeBatchSize": 10000,
 						"httpCompressionType": "none"
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Id"
+								},
+								"sink": {
+									"path": "$['Code']"
+								}
+							},
+							{
+								"source": {
+									"name": "Name"
+								},
+								"sink": {
+									"path": "$['Name']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
@@ -40,7 +61,7 @@
 						"referenceName": "ProfiseeRESTAPI",
 						"type": "DatasetReference",
 						"parameters": {
-							"entityId": "Account"
+							"entityId": "User"
 						}
 					}
 				]
