@@ -62,7 +62,7 @@
 						"referenceName": "ProfiseeRESTAPI",
 						"type": "DatasetReference",
 						"parameters": {
-							"entityId": "User"
+							"entityId": "Salesforce Users"
 						}
 					}
 				]
