@@ -204,15 +204,6 @@
 							},
 							{
 								"source": {
-									"name": "OwnerId",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Owner ID']"
-								}
-							},
-							{
-								"source": {
 									"name": "Pardot_Score_Reset__c",
 									"type": "Boolean"
 								},
