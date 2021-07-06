@@ -52,69 +52,6 @@
 							},
 							{
 								"source": {
-									"name": "Acton_Lead_Score__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Action Lead Score']"
-								}
-							},
-							{
-								"source": {
-									"name": "Bounced_Email__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Bounced Email']"
-								}
-							},
-							{
-								"source": {
-									"name": "Fax",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['BusinessFax']"
-								}
-							},
-							{
-								"source": {
-									"name": "Phone",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['BusinessPhone']"
-								}
-							},
-							{
-								"source": {
-									"name": "Company",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Company']"
-								}
-							},
-							{
-								"source": {
-									"name": "Email",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Email']"
-								}
-							},
-							{
-								"source": {
-									"name": "HasOptedOutOfEmail",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Email Opt Out']"
-								}
-							},
-							{
-								"source": {
 									"name": "FirstName",
 									"type": "String"
 								},
@@ -129,24 +66,6 @@
 								},
 								"sink": {
 									"path": "$['Last Name']"
-								}
-							},
-							{
-								"source": {
-									"name": "Name",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Full Name']"
-								}
-							},
-							{
-								"source": {
-									"name": "Pardot_Score_Reset__c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"path": "$['Pardot Score']"
 								}
 							}
 						]
