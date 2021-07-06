@@ -124,15 +124,6 @@
 							},
 							{
 								"source": {
-									"name": "LeadSource",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Lead Source']"
-								}
-							},
-							{
-								"source": {
 									"name": "City",
 									"type": "String"
 								},
