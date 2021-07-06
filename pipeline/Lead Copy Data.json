@@ -52,6 +52,15 @@
 							},
 							{
 								"source": {
+									"name": "Acton_Lead_Score__c",
+									"type": "Decimal"
+								},
+								"sink": {
+									"path": "$['Action Lead Score']"
+								}
+							},
+							{
+								"source": {
 									"name": "Bounced_Email__c",
 									"type": "Boolean"
 								},
