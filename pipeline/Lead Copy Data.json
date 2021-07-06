@@ -115,6 +115,24 @@
 							},
 							{
 								"source": {
+									"name": "Lead_ID__c",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Lead ID']"
+								}
+							},
+							{
+								"source": {
+									"name": "LeadSource",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Lead Source']"
+								}
+							},
+							{
+								"source": {
 									"name": "City",
 									"type": "String"
 								},
