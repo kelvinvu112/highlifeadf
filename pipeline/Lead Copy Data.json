@@ -27,7 +27,21 @@
 						"writeBatchSize": "500",
 						"httpCompressionType": "none"
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Acton_Lead_Score__c",
+									"type": "Decimal"
+								},
+								"sink": {
+									"path": "$['Action Lead Score']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
