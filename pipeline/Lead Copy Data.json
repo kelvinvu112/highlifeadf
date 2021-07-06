@@ -157,6 +157,24 @@
 								"sink": {
 									"path": "$['MailingZipPostalCode']"
 								}
+							},
+							{
+								"source": {
+									"name": "Name",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Full Name']"
+								}
+							},
+							{
+								"source": {
+									"name": "OwnerId",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Owner ID']"
+								}
 							}
 						]
 					}
