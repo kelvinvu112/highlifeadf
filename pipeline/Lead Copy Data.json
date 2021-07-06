@@ -195,15 +195,6 @@
 							},
 							{
 								"source": {
-									"name": "MasterRecordId",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Master']"
-								}
-							},
-							{
-								"source": {
 									"name": "Name",
 									"type": "String"
 								},
