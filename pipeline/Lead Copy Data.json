@@ -79,6 +79,24 @@
 							},
 							{
 								"source": {
+									"name": "Email",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Email']"
+								}
+							},
+							{
+								"source": {
+									"name": "HasOptedOutOfEmail",
+									"type": "Boolean"
+								},
+								"sink": {
+									"path": "$['Email Opt Out']"
+								}
+							},
+							{
+								"source": {
 									"name": "FirstName",
 									"type": "String"
 								},
