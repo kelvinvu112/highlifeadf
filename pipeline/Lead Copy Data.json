@@ -52,6 +52,24 @@
 							},
 							{
 								"source": {
+									"name": "Bounced_Email__c",
+									"type": "Boolean"
+								},
+								"sink": {
+									"path": "$['Bounced Email']"
+								}
+							},
+							{
+								"source": {
+									"name": "Fax",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['BusinessFax']"
+								}
+							},
+							{
+								"source": {
 									"name": "FirstName",
 									"type": "String"
 								},
