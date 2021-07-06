@@ -175,6 +175,24 @@
 								"sink": {
 									"path": "$['Owner ID']"
 								}
+							},
+							{
+								"source": {
+									"name": "Pardot_Score_Reset__c",
+									"type": "Boolean"
+								},
+								"sink": {
+									"path": "$['Pardot Score']"
+								}
+							},
+							{
+								"source": {
+									"name": "Title",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Title']"
+								}
 							}
 						]
 					}
