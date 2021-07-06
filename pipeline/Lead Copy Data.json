@@ -70,6 +70,15 @@
 							},
 							{
 								"source": {
+									"name": "Company",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Company']"
+								}
+							},
+							{
+								"source": {
 									"name": "FirstName",
 									"type": "String"
 								},
