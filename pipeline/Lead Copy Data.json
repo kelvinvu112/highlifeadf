@@ -231,15 +231,6 @@
 							},
 							{
 								"source": {
-									"name": "Count1__c",
-									"type": "Decimal"
-								},
-								"sink": {
-									"path": "$['Proposed Count']"
-								}
-							},
-							{
-								"source": {
 									"name": "Title",
 									"type": "String"
 								},
