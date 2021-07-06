@@ -70,6 +70,15 @@
 							},
 							{
 								"source": {
+									"name": "Phone",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['BusinessPhone']"
+								}
+							},
+							{
+								"source": {
 									"name": "Company",
 									"type": "String"
 								},
