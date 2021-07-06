@@ -141,15 +141,6 @@
 							},
 							{
 								"source": {
-									"name": "LeadSource",
-									"type": "String"
-								},
-								"sink": {
-									"path": "$['Lead Source']"
-								}
-							},
-							{
-								"source": {
 									"name": "City",
 									"type": "String"
 								},
@@ -200,6 +191,15 @@
 								},
 								"sink": {
 									"path": "$['Full Name']"
+								}
+							},
+							{
+								"source": {
+									"name": "OwnerId",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Owner ID']"
 								}
 							},
 							{
