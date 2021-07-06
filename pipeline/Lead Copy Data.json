@@ -33,11 +33,20 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Acton_Lead_Score__c",
-									"type": "Decimal"
+									"name": "Id",
+									"type": "String"
 								},
 								"sink": {
-									"path": "$['Action Lead Score']"
+									"path": "$['Code']"
+								}
+							},
+							{
+								"source": {
+									"name": "LastModifiedDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"path": "$['SF Last Modified Date']"
 								}
 							}
 						]
