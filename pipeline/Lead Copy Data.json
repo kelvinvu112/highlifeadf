@@ -23,7 +23,7 @@
 						"type": "RestSink",
 						"httpRequestTimeout": "00:05:00",
 						"requestInterval": 10,
-						"requestMethod": "POST",
+						"requestMethod": "PATCH",
 						"writeBatchSize": "500",
 						"httpCompressionType": "none"
 					},
