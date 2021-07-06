@@ -48,6 +48,204 @@
 								"sink": {
 									"path": "$['SF Last Modified Date']"
 								}
+							},
+							{
+								"source": {
+									"name": "Acton_Lead_Score__c",
+									"type": "Decimal"
+								},
+								"sink": {
+									"path": "$['Action Lead Score']"
+								}
+							},
+							{
+								"source": {
+									"name": "Bounced_Email__c",
+									"type": "Boolean"
+								},
+								"sink": {
+									"path": "$['Bounced Email']"
+								}
+							},
+							{
+								"source": {
+									"name": "Fax",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['BusinessFax']"
+								}
+							},
+							{
+								"source": {
+									"name": "Phone",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['BusinessPhone']"
+								}
+							},
+							{
+								"source": {
+									"name": "Company",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Company']"
+								}
+							},
+							{
+								"source": {
+									"name": "Email",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Email']"
+								}
+							},
+							{
+								"source": {
+									"name": "HasOptedOutOfEmail",
+									"type": "Boolean"
+								},
+								"sink": {
+									"path": "$['Email Opt Out']"
+								}
+							},
+							{
+								"source": {
+									"name": "FirstName",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['First Name']"
+								}
+							},
+							{
+								"source": {
+									"name": "LastName",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Last Name']"
+								}
+							},
+							{
+								"source": {
+									"name": "Lead_ID__c",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Lead ID']"
+								}
+							},
+							{
+								"source": {
+									"name": "LeadSource",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Lead Source']"
+								}
+							},
+							{
+								"source": {
+									"name": "City",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['MailingCity']"
+								}
+							},
+							{
+								"source": {
+									"name": "Country",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['MailingCountry']"
+								}
+							},
+							{
+								"source": {
+									"name": "State",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['MailingStateProvince']"
+								}
+							},
+							{
+								"source": {
+									"name": "Street",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['MailingStreet']"
+								}
+							},
+							{
+								"source": {
+									"name": "PostalCode",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['MailingZipPostalCode']"
+								}
+							},
+							{
+								"source": {
+									"name": "MasterRecordId",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Master']"
+								}
+							},
+							{
+								"source": {
+									"name": "Name",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Full Name']"
+								}
+							},
+							{
+								"source": {
+									"name": "OwnerId",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Owner ID']"
+								}
+							},
+							{
+								"source": {
+									"name": "Pardot_Score_Reset__c",
+									"type": "Boolean"
+								},
+								"sink": {
+									"path": "$['Pardot Score']"
+								}
+							},
+							{
+								"source": {
+									"name": "Count1__c",
+									"type": "Decimal"
+								},
+								"sink": {
+									"path": "$['Proposed Count']"
+								}
+							},
+							{
+								"source": {
+									"name": "Title",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Title']"
+								}
 							}
 						]
 					}
