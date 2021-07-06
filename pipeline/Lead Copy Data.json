@@ -115,11 +115,11 @@
 							},
 							{
 								"source": {
-									"name": "Lead_ID__c",
+									"name": "LeadSource",
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['Lead ID']"
+									"path": "$['Lead Source']"
 								}
 							},
 							{
