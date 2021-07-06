@@ -240,7 +240,7 @@
 				"type": "SalesforceObject",
 				"schema": [],
 				"typeProperties": {
-					"objectApiName": "Account"
+					"objectApiName": "Lead"
 				}
 			},
 			"dependsOn": [
@@ -665,6 +665,67 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Lead Copy Data')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SalesforceSource",
+								"readBehavior": "query"
+							},
+							"sink": {
+								"type": "RestSink",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": 10,
+								"requestMethod": "POST",
+								"writeBatchSize": 10000,
+								"httpCompressionType": "none"
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "SalesforceObject1",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "ProfiseeRESTAPI",
+								"type": "DatasetReference",
+								"parameters": {
+									"entityId": "Lead"
+								}
+							}
+						]
+					}
+				],
+				"folder": {
+					"name": "Salesforce"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]",
+				"[concat(variables('factoryId'), '/datasets/ProfiseeRESTAPI')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/User Copy Data')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -732,99 +793,6 @@
 								"type": "DatasetReference",
 								"parameters": {
 									"entityId": "Salesforce Users"
-								}
-							}
-						]
-					}
-				],
-				"folder": {
-					"name": "Salesforce"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SalesforceObject1')]",
-				"[concat(variables('factoryId'), '/datasets/ProfiseeRESTAPI')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1_copy1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "SalesForce Accounts to REST API",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "SalesforceSource",
-								"query": "SELECT Id,Name,Phone,Account_Territory__c,Type,AnnualRevenue,BillingCity,BillingCountry,BillingState,BillingStreet,BillingPostalCode,CAB_Member__c,CAM__c,Customer_Status__c,License_Expiration_Date__c,License_Expiration_Date_AV__c,GRM_Server__c,Industry,Initial_Contract_Date__c,Federation_Manager__c,MDS_Support_Annivers__c,MSFT_Partner__c,Netsuite_ID__c,OwnerId,Partner_Status__c,Premium_DQ__c,Profisee_MDM_Support_Anniversary__c,Profisee_MDM_Version__c,SDK__c,TickerSymbol,Website from Account LIMIT 10",
-								"readBehavior": "query"
-							},
-							"sink": {
-								"type": "RestSink",
-								"httpRequestTimeout": "00:05:00",
-								"requestInterval": 10,
-								"requestMethod": "PATCH",
-								"writeBatchSize": "500",
-								"httpCompressionType": "none"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "Id",
-											"type": "String"
-										},
-										"sink": {
-											"path": "$['Code']"
-										}
-									},
-									{
-										"source": {
-											"name": "Name",
-											"type": "String"
-										},
-										"sink": {
-											"path": "$['Name']"
-										}
-									},
-									{
-										"source": {
-											"name": "Account_Territory__c"
-										},
-										"sink": {
-											"path": "$['Account Territory']"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "SalesforceObject1",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "ProfiseeRESTAPI",
-								"type": "DatasetReference",
-								"parameters": {
-									"entityId": "Account"
 								}
 							}
 						]
