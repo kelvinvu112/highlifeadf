@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SalesforceSource",
+						"query": "SELECT Id,Name,Phone,LastModifiedDate,Acton_Lead_Score__c,Bounced_Email__c,Fax,HasOptedOutOfEmail,FirstName,LastName,Lead_ID__c,City,Country,State,Street,PostalCode,OwnerId,Pardot_Score_Reset__c,Title from Lead LIMIT 10",
 						"readBehavior": "query"
 					},
 					"sink": {
